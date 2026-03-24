@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principios: Diseño Fluido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">  
+        <p class="text">
+            Este texto y su contenedor se adaptan fluidamente al tamaño de la pantalla usando porcentajes (%) y unidades del viewport (vw).
+        </p>
+    </div>
+    <div class="container columnas-wrapper">  
+        <div class="column">
+            <p class="text">Column 1</p>
+        </div>
+        <div class="column">
+            <p class="text">Column 2</p>
+        </div>
+    </div>
+
+
+    <div class="caja-padre">
+    Caja Padre (width: 500px)
+    
+    <div class="hijo-porcentaje">Hijo 50% (Mide 250px)</div>
+    <div class="hijo-viewport">Hijo 50vw (Mide la mitad de tu pantalla, ignora al padre)</div>
+    
+    <div class="texto-em">
+        Texto 1.5em (Crece un 50% según el padre)
+        <div class="texto-em">Texto 1.5em anidado (¡Se multiplicó de nuevo y es más grande!)</div>
+    </div>
+
+    <div class="texto-rem">
+        Texto 1.5rem (24px exactos, predecible)
+        <div class="texto-rem">Texto 1.5rem anidado (Se mantiene en 24px, no se multiplica)</div>
+    </div>
+    </div>
+</body>
+</html>

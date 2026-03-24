@@ -1,0 +1,98 @@
+body {
+  margin: 0; /* Elimina el margen por defecto del navegador */
+  padding: 0; /* Elimina el padding por defecto del navegador */
+  background: yellow;
+}
+.container {
+  width: 80%; /* Ancho relativo al contenedor padre */
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  margin: 10px auto; /* Centrar el contenedor horizontalmente */
+  
+  /* Estilos extra sugeridos para que los alumnos vean la caja en pantalla */
+  background-color: #e0f7fa; 
+  padding: 40px;
+  border: 2px solid #00acc1;
+}
+
+.column {
+  width: 100%; /* Ancho relativo al contenedor padre */
+  
+  /* Estilos extra sugeridos para que los alumnos vean las columnas en pantalla */
+  background-color: #b2ebf2;
+  padding: 20px;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.columnas-wrapper {
+  display: flex;
+  flex-direction: column; /* En celular, las columnas van una debajo de otra */
+  gap: 15px; /* Separación entre las columnas apiladas */
+}
+
+.text {
+  font-size: 2vw; /* Tamaño de fuente relativo al ancho del viewport */
+  
+  /* Estilos extra sugeridos */
+  color: #006064;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+
+
+/* Entorno base */
+html { font-size: 16px; }
+
+.caja-padre {
+  width: 500px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  font-size: 20px; /* Base para el 'em' de sus hijos */
+}
+
+/* 1. Diferencia % vs VW */
+.hijo-porcentaje {
+  width: 50%; /* 50% de 500px = 250px */
+  background-color: lightblue;
+}
+
+.hijo-viewport {
+  width: 50vw; /* 50% de la ventana, se saldrá de la caja si la ventana es grande */
+  background-color: lightgreen;
+}
+
+/* 2. Diferencia EM vs REM */
+.texto-em {
+  font-size: 1.5em; /* 1.5 * 20px (del padre) = 30px. En el anidado será 1.5 * 30px = 45px! */
+  color: red;
+}
+
+.texto-rem {
+  font-size: 1.5rem; /* 1.5 * 16px (del html) = 24px. Siempre constante. */
+  color: blue;
+}
+
+
+
+
+/* 2. MEDIA QUERY PARA TABLETS Y ESCRITORIO (768px en adelante) */
+@media (min-width: 768px) {
+  
+  .container {
+    width: 50%; /* Regresamos al 80% original porque hay más espacio */
+    padding: 40px; 
+  }
+
+  .columnas-wrapper {
+    flex-direction: row; /* ¡Magia! Las columnas se colocan una al lado de la otra */
+  }
+
+  .column {
+    width: 50%; /* Cada columna ocupa la mitad del contenedor */
+  }
+
+  .text {
+    font-size: 2vw; /* Reducimos el vw porque la pantalla es más ancha */
+  }
+}
