@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Avanzado - Cheat Sheet UTP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Laboratorio Exhaustivo de Flexbox</h1>
+        <p>Referencia visual de todas las propiedades y sus variantes.</p>
+    </header>
+
+    <section>
+        <h2>1. display (El activador de Flexbox)</h2>
+        <div class="showcase">
+            <div>
+                <h3>flex (Comportamiento de bloque)</h3>
+                <div class="d-flex demo-bg">
+                    <div class="box">Item 1</div>
+                    <div class="box">Item 2</div>
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 5px; color: #636e72;">Ocupa el 100% del ancho disponible, empujando otros elementos hacia abajo.</p>
+            </div>
+            <div>
+                <h3>inline-flex (Comportamiento en línea)</h3>
+                <div class="d-inline-flex demo-bg">
+                    <div class="box">Item 1</div>
+                    <div class="box">Item 2</div>
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 5px; color: #636e72;">Se ajusta estrictamente al ancho de su contenido. Permite texto u otros elementos a los lados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. flex-direction (Dirección del eje principal)</h2>
+        <div class="showcase">
+            <div>
+                <h3>row (Por defecto)</h3>
+                <div class="flex-container fd-row"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div>
+            </div>
+            <div>
+                <h3>row-reverse</h3>
+                <div class="flex-container fd-row-reverse"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div>
+            </div>
+            <div>
+                <h3>column</h3>
+                <div class="flex-container fd-column"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div>
+            </div>
+            <div>
+                <h3>column-reverse</h3>
+                <div class="flex-container fd-column-reverse"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>2. flex-wrap (Comportamiento multilínea)</h2>
+        <div class="showcase">
+            <div>
+                <h3>nowrap (Por defecto - se aplastan)</h3>
+                <div class="flex-container fw-nowrap width-limit">
+                    <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div>
+                </div>
+            </div>
+            <div>
+                <h3>wrap (Bajan a la siguiente línea)</h3>
+                <div class="flex-container fw-wrap width-limit">
+                    <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div>
+                </div>
+            </div>
+            <div>
+                <h3>wrap-reverse (Bajan hacia arriba)</h3>
+                <div class="flex-container fw-wrap-reverse width-limit">
+                    <div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. justify-content (Alineación en Eje Principal)</h2>
+        <div class="showcase">
+            <div><h3>flex-start</h3><div class="flex-container jc-flex-start"><div class="box">1</div><div class="box">2</div></div></div>
+            <div><h3>flex-end</h3><div class="flex-container jc-flex-end"><div class="box">1</div><div class="box">2</div></div></div>
+            <div><h3>center</h3><div class="flex-container jc-center"><div class="box">1</div><div class="box">2</div></div></div>
+            <div><h3>space-between</h3><div class="flex-container jc-space-between"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div></div>
+            <div><h3>space-around</h3><div class="flex-container jc-space-around"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div></div>
+            <div><h3>space-evenly</h3><div class="flex-container jc-space-evenly"><div class="box">1</div><div class="box">2</div><div class="box">3</div></div></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. align-items (Alineación en Eje Cruzado)</h2>
+        <div class="showcase">
+            <div><h3>stretch (Por defecto)</h3><div class="flex-container ai-stretch height-limit"><div class="box">1</div><div class="box">2</div></div></div>
+            <div><h3>flex-start</h3><div class="flex-container ai-flex-start height-limit"><div class="box h-auto">1</div><div class="box h-auto">2</div></div></div>
+            <div><h3>flex-end</h3><div class="flex-container ai-flex-end height-limit"><div class="box h-auto">1</div><div class="box h-auto">2</div></div></div>
+            <div><h3>center</h3><div class="flex-container ai-center height-limit"><div class="box h-auto">1</div><div class="box h-auto">2</div></div></div>
+            <div><h3>baseline (Alinea el texto)</h3><div class="flex-container ai-baseline height-limit"><div class="box text-large">A</div><div class="box text-small">a</div></div></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. align-content (Alineación de múltiples líneas - Requiere wrap)</h2>
+        <div class="showcase">
+            <div><h3>flex-start</h3><div class="flex-container fw-wrap ac-flex-start height-limit-large"><div class="box w-50">1</div><div class="box w-50">2</div><div class="box w-50">3</div></div></div>
+            <div><h3>flex-end</h3><div class="flex-container fw-wrap ac-flex-end height-limit-large"><div class="box w-50">1</div><div class="box w-50">2</div><div class="box w-50">3</div></div></div>
+            <div><h3>center</h3><div class="flex-container fw-wrap ac-center height-limit-large"><div class="box w-50">1</div><div class="box w-50">2</div><div class="box w-50">3</div></div></div>
+            <div><h3>space-between</h3><div class="flex-container fw-wrap ac-space-between height-limit-large"><div class="box w-50">1</div><div class="box w-50">2</div><div class="box w-50">3</div></div></div>
+            <div><h3>space-around</h3><div class="flex-container fw-wrap ac-space-around height-limit-large"><div class="box w-50">1</div><div class="box w-50">2</div><div class="box w-50">3</div></div></div>
+            <div><h3>stretch</h3><div class="flex-container fw-wrap ac-stretch height-limit-large"><div class="box w-50 h-auto">1</div><div class="box w-50 h-auto">2</div><div class="box w-50 h-auto">3</div></div></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>6. Propiedades de los Items (Hijos)</h2>
+        
+        <h3>order (Reordenamiento visual)</h3>
+        <div class="flex-container">
+            <div class="box">DOM: 1 (order: 0)</div>
+            <div class="box order-1">DOM: 2 (order: 1)</div>
+            <div class="box order-minus-1">DOM: 3 (order: -1)</div>
+        </div>
+
+        <h3>flex-grow (Habilidad de crecer)</h3>
+        <div class="flex-container">
+            <div class="box">grow: 0 (default)</div>
+            <div class="box fg-1">grow: 1</div>
+            <div class="box fg-2">grow: 2 (Doble espacio sobrante)</div>
+        </div>
+
+        <h3>flex-shrink (Habilidad de encogerse)</h3>
+        <div class="flex-container width-limit">
+            <div class="box fs-1 w-200">shrink: 1 (Se encoge)</div>
+            <div class="box fs-0 w-200">shrink: 0 (Intocable)</div>
+            <div class="box fs-2 w-200">shrink: 2 (Se encoge el doble)</div>
+        </div>
+
+        <h3>flex-basis (Tamaño base antes del grow/shrink)</h3>
+        <div class="flex-container">
+            <div class="box fb-auto">basis: auto</div>
+            <div class="box fb-150px">basis: 150px</div>
+            <div class="box fb-50p">basis: 50%</div>
+        </div>
+
+        <h3>align-self (Sobrescribe align-items para un solo elemento)</h3>
+        <div class="flex-container ai-center height-limit">
+            <div class="box h-auto">Padre: center</div>
+            <div class="box h-auto as-flex-start">self: flex-start</div>
+            <div class="box h-auto as-flex-end">self: flex-end</div>
+            <div class="box as-stretch">self: stretch</div>
+        </div>
+    </section>
+
+</body>
+</html>
