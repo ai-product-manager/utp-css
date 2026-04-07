@@ -1,0 +1,55 @@
+/* --- 1. DEFINICIÓN DEL CONTENEDOR (GRID CONTAINER) --- */
+.grid-container {
+    display: grid; /* Activa el modelo de cuadrícula  */
+    
+    /* Definición de columnas y filas usando unidades 'fr' y 'repeat'  */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: 100px 300px 80px;
+    
+    /* Espaciado entre celdas (Grid Gap)  */
+    gap: 15px; 
+    
+    /* Definición de Áreas de Cuadrícula  */
+    grid-template-areas: 
+        "header  header  header"
+        "sidebar main    main"
+        "footer  footer  footer";
+
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* --- 2. POSICIONAMIENTO DE ELEMENTOS (GRID ITEMS) --- */
+.item {
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Asignación de áreas según el nombre definido en el contenedor  */
+.header { 
+    grid-area: header; 
+    background-color: #3498db; 
+}
+
+.sidebar { 
+    grid-area: sidebar; 
+    background-color: #e67e22; 
+}
+
+.main-content { 
+    grid-area: main; 
+    background-color: #2ecc71; 
+}
+
+.footer { 
+    grid-area: footer; 
+    background-color: #9b59b6; 
+}
+
+/* Ejemplo de posicionamiento basado en líneas (Grid Lines)  
+   Si quisiéramos que el footer ocupe solo las dos últimas columnas:
+   grid-column: 2 / 4; 
+*/

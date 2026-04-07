@@ -1,0 +1,20 @@
+/* EL CONTENEDOR (PADRE) */
+.container {
+    display: grid; /* Activa el modelo de cuadrícula */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas de igual tamaño */
+    gap: 10px; /* Espacio uniforme entre elementos */
+    background-color: #f8d7da; /* Color de fondo sutil para notar el área */
+    padding: 10px;
+}
+
+/* LOS ELEMENTOS (HIJOS) */
+.box {
+    background-color: lightblue;
+    height: 100px;
+    display: flex; /* Opcional: para centrar el texto A, B, C */
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border: 1px solid #007bff;
+}
